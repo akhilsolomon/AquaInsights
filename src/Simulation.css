@@ -1,0 +1,33 @@
+.controls {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .controls h2 {
+    margin-bottom: 10px;
+  }
+  .controls label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  .controls input[type="range"] {
+    width: 100%;
+  }
+  
+  
+  .speed-display {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9f7f9;
+    border-radius: 8px;
+    width: 80%;
+    margin: 0px auto;
+  }
+  .speed-display h2 {
+    margin-bottom: 10px;
+  }
+  
