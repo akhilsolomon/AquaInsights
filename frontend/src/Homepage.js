@@ -2,22 +2,22 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link for routing
 import './Homepage.css'; // Ensure this CSS file exists
 import MangroveImage from './assets/background.jpeg';
-
+import displayMangrove from './assets/mangroove_homepage.jpeg';
 function Homepage() {
     return (
         <div className="homepage">
             <h1 className="homepage-title">Welcome to AquaInsights</h1>
 
             <div className="card-container">
-                <Link to="/InfoPage" className="card"> {/* Link to InfoPage */}
-                    <img src={MangroveImage} alt="Mangrove Ecosystem" className="card-image" />
+                <Link to="/info" className="card"> {/* Link to InfoPage */}
+                    <img src={displayMangrove} alt="Mangrove Ecosystem" className="card-image" />
                     <div className="card-info">
                         <h2>Explore the Mangrove Ecosystem in Kakinada</h2>
                         <p>Discover the unique flora and fauna of the mangrove ecosystem and learn about their importance to marine life.</p>
                     </div>
                 </Link>
 
-                <Link to="/Simulation" className="card"> {/* Link to Simulation Page */}
+                <Link to="/simulation" className="card"> {/* Link to Simulation Page */}
                     <img src={MangroveImage} alt="Simulate Ecosystem" className="card-image" />
                     <div className="card-info">
                         <h2>Simulate Your Own Mangrove Ecosystem</h2>

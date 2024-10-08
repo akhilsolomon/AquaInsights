@@ -1,0 +1,49 @@
+.info-page-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row; /* Ensure vertical stacking of elements */
+}
+
+.back-button {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 20px; /* Space below back button */
+}
+
+.species-title {
+    color: black; /* Set the title color to black */
+}
+
+.info-card, .pollutant-card {
+    width: 100%; /* Ensure cards take full width of the column */
+}
+
+.card-img {
+    height: 100px; /* Set a uniform image height */
+    object-fit: cover;
+}
+
+.info-card, .pollutant-card {
+    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.info-card .card-title, .pollutant-card .card-title {
+    font-weight: bold;
+}
+
+.info-card .card-text, .pollutant-card .card-text {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.ecosystem-carousel .carousel-item img {
+    height: 300px; /* Adjust height for carousel images */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+h1, h2 {
+    color: #333;
+}
