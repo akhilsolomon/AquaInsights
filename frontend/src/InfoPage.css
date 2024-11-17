@@ -1,49 +1,147 @@
+/* .info-page-container {
+  background-image: url("./assets/blog_backgroung.png");
+  background-size: 100%;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+} */
+
 .info-page-container {
-    padding: 20px;
+    position: relative;
+    height: 100vh;
+    width: 100%;
     display: flex;
-    flex-direction: row; /* Ensure vertical stacking of elements */
-}
-
-.back-button {
-    font-size: 18px;
-    color: #007bff;
-    margin-bottom: 20px; /* Space below back button */
-}
-
-.species-title {
-    color: black; /* Set the title color to black */
-}
-
-.info-card, .pollutant-card {
-    width: 100%; /* Ensure cards take full width of the column */
-}
-
-.card-img {
-    height: 100px; /* Set a uniform image height */
-    object-fit: cover;
-}
-
-.info-card, .pollutant-card {
-    box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keeps background fixed */
     overflow: hidden;
 }
 
-.info-card .card-title, .pollutant-card .card-title {
-    font-weight: bold;
+.info-page-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./assets/blog_backgroung.png'); /* Adjust the path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Ensures background stays fixed */
+    opacity: 0.8;
+    z-index: -1;
+    backdrop-filter: brightness(0.2);
 }
 
-.info-card .card-text, .pollutant-card .card-text {
-    font-size: 0.9em;
-    color: #555;
+.page-title {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  z-index: 20;
 }
 
-.ecosystem-carousel .carousel-item img {
-    height: 300px; /* Adjust height for carousel images */
-    object-fit: cover;
-    border-radius: 8px;
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
 }
 
-h1, h2 {
-    color: #333;
+.carousel-items {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  overflow-x: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 10px 0;
+  justify-content: center;
+  position: relative;
+}
+
+.carousel-items::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit browsers */
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 400px; /* Adjust width for larger box */
+  height: 400px;
+  opacity: 0.5;
+  transition: transform 0.5s ease, opacity 0.5s ease, border-radius 0.5s ease;
+  scroll-snap-align: center;
+  cursor: pointer;
+  border-radius: 10px; /* Rounded corners */
+}
+
+.carousel-item.active {
+  transform: scale(1.2); /* Larger active box */
+  opacity: 1;
+  cursor: pointer;
+  border: radius 10px;
+}
+
+.carousel-item:not(.active) {
+  transform: scale(0.8); /* Decrease size of non-active boxes */
+  opacity: 0.7;
+}
+
+.card-img {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px; /* Ensure rounded corners */
+}
+
+
+.back-button {
+    display: flex;
+    justify-content: flex-start;
+    /* position: fixed; Keeps the button in a fixed position */
+    top: 20px;
+    left: 20px;
+    z-index: 30;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #f1f1f1;
+}
+
+.carousel-arrows {
+  display: none; /* Removed the arrows */
+}
+
+@media (max-width: 768px) {
+  .carousel-items {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel-item {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .carousel-arrows {
+    display: none;
+  }
 }

@@ -1,61 +1,131 @@
-/* Login.css */
-
+/* General Page Styles */
 body {
-    background-color: #e0f7fa;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
 }
 
-.back-button {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: transparent;
-    border: none;
-    color: #00796b;
-    font-size: 16px;
-    cursor: pointer;
-}
-
+/* Login Container */
 .login-container {
-    min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    top: 200px;
+    left: 550px;
 }
 
+/* Form Box */
 .login-form {
-    background-color: #ffffff;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Form Input Styles */
+.form-input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
     width: 100%;
 }
 
-h1 {
-    margin-bottom: 20px;
-    color: #00796b;
+/* Error Message Styling */
+.error-text {
+    color: red;
+    font-size: 12px;
+}
+
+/* Gradient Button Styling */
+.button-box {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #7ec8e3, #d5e8fe);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* Gradient Button */
+.button-box .btn {
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    background: linear-gradient(135deg, #7ec8e3, #d5e8fe);
+    color: #000000;
+    width: 100%;
+}
+
+/* Remove any additional background behind text in buttons */
+.button-box .btn span {
+    background: transparent;
+}
+
+/* Register Box Text */
+.register-box {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register-text {
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: underline;
+}
+
+/* Back Button */
+.back-button {
+    font-size: 16px;
+    color: #007bff;
+    text-decoration: none;
+    text-align: center;
+    padding-left: 10px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-button:hover {
+    text-decoration: none;
     text-align: center;
 }
 
-.form-input {
-    margin-bottom: 20px;
+/* Hover Effects for Button */
+button:disabled {
+    background-color: #d6d6d6;
+    cursor: not-allowed;
 }
 
-#submitBtn {
-    width: 50%;
-    margin-left: 25%;
+button:hover:enabled {
+    background-color: #a8d3ed;
 }
 
-.register-button {
-    color: #00796b;
-    text-decoration: underline;
-    font-size: 16px;
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        margin-top: 20px;
+    }
 
-.register-button:hover {
-    color: #004d40;
-    text-decoration: none;
+    .login-form {
+        padding: 20px;
+    }
+
+    .button-box {
+        margin-top: 15px;
+    }
+
+    .button-box .btn {
+        font-size: 14px;
+    }
+
+    .form-input {
+        padding: 8px;
+    }
+
+    .register-box {
+        margin-top: 10px;
+    }
 }

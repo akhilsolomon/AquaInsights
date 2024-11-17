@@ -5,8 +5,10 @@ import penguinImage from './assets/peng.png';
 import Homepage from './Homepage'; 
 import InfoPage from './InfoPage'; 
 import Simulation from './Simulation';
-import Login from './Login'; // Ensure this is the correct import
-import Register from './Register'; // Ensure this is the correct import
+import KolleruSimulation from './kolleru_simulation'; // Ensure this is correctly imported
+import Login from './Login';
+import Register from './Register';
+import Bot from './chatbot';
 
 function Intro() {
   const navigate = useNavigate(); 
@@ -22,28 +24,6 @@ function Intro() {
       .then(data => {
         setIsLoggedIn(typeof data._id !== 'undefined');
       });
-  }, []);
-
-  useEffect(() => {
-    const bubbles = [
-      document.getElementById('bubble1'),
-      document.getElementById('bubble2'),
-      document.getElementById('bubble3'),
-      document.getElementById('bubble4'),
-      document.getElementById('bubble5'),
-      document.getElementById('bubble6')
-    ];
-
-    let delay = 0;
-
-    bubbles.forEach((bubble) => {
-      setTimeout(() => {
-        if (bubble) {
-          bubble.classList.add('bubble-show');
-        }
-      }, delay);
-      delay += 2500;
-    });
   }, []);
 
   const skipIntro = () => {
@@ -76,16 +56,15 @@ function Intro() {
 
   return (
     <div className="App">
-      <button id="skip-button" onClick={skipIntro}>Skip to Homepage</button>
+      <h1 className="website-title">AquaInsights</h1>
+      <p className="website-description">
+        Discover the impact of human activities on marine ecosystems through immersive simulations.
+        Learn how pollution affects marine life and ways to protect these vital environments.
+      </p>
+      <button id="homepage-button" onClick={skipIntro}>Explore</button>
       <button id="contact-button" onClick={openContactPopup}>Contact Us</button>
       <div className="penguin-container">
         <img src={penguinImage} alt="Penguin Character" className="penguin" />
-        <div id="bubble1" className="speech-bubble">Someone is here...</div>
-        <div id="bubble2" className="speech-bubble">Hello...!!</div>
-        <div id="bubble3" className="speech-bubble">Welcome to AquaInsights.</div>
-        <div id="bubble4" className="speech-bubble">I'm your personal SeaBot.</div>
-        <div id="bubble5" className="speech-bubble">You can ask me questions related to sea life.</div>
-        <div id="bubble6" className="speech-bubble">Have fun and learn to the fullest!</div>
       </div>
       <div id="contact-popup" className="popup" style={{ display: 'none' }}>
         <div className="popup-content">
@@ -112,12 +91,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/homepage" element={<Homepage />} />
+        <Route path="/Bot" element={<Bot/>} />
         <Route path="/info" element={<InfoPage />} />
         <Route path="/simulation" element={<Simulation />} />
-        <Route path="/login" element={<Login />} /> {/* Ensure Login is correctly defined */}
+        <Route path="/simulation/:location" element={<Simulation />} />
+        <Route path="/simulation/kolleru" element={<KolleruSimulation />} />  {/* Correct path */}
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
-    </Router>
+    </Router> 
   );
 }
 

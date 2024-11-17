@@ -1,61 +1,195 @@
+/* Homepage.css */
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-.homepage {
-    background-image: url('https://example.com/background-image.jpg'); /* Background image URL */
-    background-size: cover;
-    background-position: center;
-    
+    font-family: 'Arial', sans-serif;
+    color: #29293d;
+  }
+  
+  .homepage-container {
+    position: relative;
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-.homepage-title {
-    font-size: 3rem;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.card-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: rgba(255, 255, 255, 0.8); /* Light background for contrast */
-    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
-    width: 300px; /* Card width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.card-image {
+  }
+  
+  .homepage-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('./assets/blog_backgroung.png'); /* Ensure this path is correct */
+    backdrop-filter: brightness(0.2);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+  }
+  
+  .content {
+    background-color: rgba(255, 255, 255, 0.4);
+    padding: 20px;
+    text-align: center;
+    height: 600px;
+    width: 1200px;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .navbar {
     width: 100%;
-    height: 200px; /* Fixed height for images */
-    object-fit: cover; /* Cover the card space */
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin-top: -25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    font-size: 28px;
+    color: #4a6aff;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar ul li {
+    font-size: 18px;
+    cursor: pointer;
+    color: #000000;
+  }
+  
+  .auth-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .auth-buttons button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .simulation-form select {
+    padding: 8px;
+    background-color: #ffffff;
+    
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 10px;
+  }  
 
-.card-info {
-    padding: 15px;
-}
+  h2 {
+    font-size: 28px;
+    color: #4a6aff;
+    margin: 20px 0 10px 0;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #29293d;
+    margin-bottom: 40px;
+  }
+  
+  .simulation-form {
+    display: flex;
+    position: absolute;
+    top: 280px;
+    left: 517px;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%; /* Responsive width for smaller screens */
+    max-width: 400px;
+  }
+  
+  .simulation-form label {
+    display: flex;
+    position: absolute;
+    top:-15px;
+    font-size: 14px;
+    color: #4a6aff;
+    margin-bottom: 5px;
+  }
+  
+  .simulation-form input {
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 14px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .start-btn {
+    display: flex;
+    top: 350px;
+    position: absolute;
 
-.card-info h2 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-}
+    padding: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4a6aff;
 
-.card-info p {
-    font-size: 1rem;
-    color: #333; /* Dark text for better readability */
-}
+
+  }
+  
+  
+  .penguin {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 250px;
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      padding: 20px;
+      margin-top: 50px;
+      max-width: 90%;
+    }
+  
+    .navbar ul {
+      gap: 10px;
+    }
+  
+    .auth-buttons button {
+      padding: 6px 12px;
+    }
+  
+    .penguin {
+      width: 80px;
+    }
+  
+    .simulation-form {
+      width: 100%;
+    }
+  }
+  
