@@ -13,3 +13,6 @@ npm start
 In second terminal
 cd .\backend\
 node .\index.js\
+
+
+Visit our website through: https://aquainsights.netlify.app/
